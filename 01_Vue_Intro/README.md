@@ -172,3 +172,53 @@ And then I will update the template to reflect these changes.
 </div>
 ````
 Now we only see the contact component being rendered once, even though we used the tag twice within the template.
+
+## Important Note: Vue 'export default' vs 'new Vue' ##
+When you declare:
+```js
+new Vue({
+    el: '#app',
+    data () {
+      return {}
+    }
+)}
+```
+That is typically your root Vue instance that the rest of the application descends from. This hangs off the root element declared in an html document, for example:
+```html
+<html>
+  ...
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
+```
+The other syntax is declaring a component which can be registered and reused later. For example, if you create a single file component like:
+```js
+// my-component.js
+export default {
+    name: 'my-component',
+    data () {
+      return {}
+    }
+}
+```
+You can later import this and use it like:
+```js
+// another-component.js
+<template>
+  <my-component></my-component>
+</template>
+<script>
+  import myComponent from 'my-component'
+  export default {
+    components: {
+      myComponent
+    }
+    data () {
+      return {}
+    }
+    ...
+  }
+</script>
+```
+Also, be sure to declare your data properties as functions, otherwise they are not going to be reactive
