@@ -122,6 +122,7 @@ export default {
 ```
 
 ### Example ###
+```js
 var contactUs = {
 	data: function() {
 		return {
@@ -135,18 +136,20 @@ var contactUs = {
 		</div>
 	`
 };
+```
 Then within the Vue instance, we can add a components property with the components that we want to register locally. This property should be an object and contain key-value pairs of tag names and configuration objects.
-
+```js
 new Vue({
 	el: '#app',
 	components: {
 		'contact-us': contactUs
 	}
 });
+```
 Notice that in this example, I have added the components property to a Vue instance, but I could just as well have added it to another component.
 
 If you were to run the code, you would see the component working. But just to prove that the component is indeed local and not globally available, I will add another Vue instance and change the selector of the existing one.
-
+```js
 new Vue({
 	el: '#app1',
 	components: {
@@ -157,8 +160,9 @@ new Vue({
 new Vue({
 	el: '#app2',
 });
+```
 And then I will update the template to reflect these changes.
-
+```html
 <div id="app1">
 	<contact-us></contact-us>
 </div>
@@ -166,4 +170,5 @@ And then I will update the template to reflect these changes.
 <div id="app2">
 	<contact-us></contact-us>
 </div>
+````
 Now we only see the contact component being rendered once, even though we used the tag twice within the template.
