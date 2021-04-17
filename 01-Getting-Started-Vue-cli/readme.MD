@@ -7,7 +7,7 @@ node -v
 
 ## Uninstalling VueJS ##
 ```js
-npm uninstall -g vue-cli
+npm uninstall -g @vue/cli
 ```
 
 
