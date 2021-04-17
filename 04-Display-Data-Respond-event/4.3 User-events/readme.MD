@@ -2,7 +2,8 @@
 
 v-on is the attribute added to the DOM elements to listen to the events in VueJS.
 
-Click Event
+<img src="img/img1.png" />
+
 Example
 ```js
 <html>
