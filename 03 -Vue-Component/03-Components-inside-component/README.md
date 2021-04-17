@@ -1,4 +1,12 @@
 ## How to use multiple component inside single component in VueJs ##
+<img src="img/img1.png" />
+
+<img src="img/img2.png" />
+
+<img src="img/img3.png" />
+
+- note @/component is the short reference to the component folder
+
 ```js
 App.vue
 <template>
