@@ -1,41 +1,7 @@
 ## User event in VueJs ##
 
 v-on is the attribute added to the DOM elements to listen to the events in VueJS.
-
 <img src="img/img1.png" />
-
-Example
-```js
-<html>
-   <head>
-      <title>VueJs Instance</title>
-      <script type = "text/javascript" src = "js/vue.js"></script>
-   </head>
-   <body>
-      <div id = "databinding">
-         <button v-on:click = "displaynumbers">Click ME</button>
-         <h2> Add Number 100 + 200 = {{total}}</h2>
-      </div>
-      <script type = "text/javascript">
-         var vm = new Vue({
-            el: '#databinding',
-            data: {
-               num1: 100,
-               num2 : 200,
-               total : ''
-            },
-            methods : {
-               displaynumbers : function(event) {
-                  console.log(event);
-                  return this.total =  this.num1+ this.num2;
-               }
-            },
-         });
-      </script>
-   </body>
-</html>
-```
-
 The following code is used to assign a click event for the DOM element.
 ```js
 <button v-on:click = "displaynumbers">Click ME</button>
@@ -46,69 +12,94 @@ There is a shorthand for v-on, which means we can also call the event as follows
 <button @click = "displaynumbers">Click ME</button>
 ```
 
-On the click of the button, it will call the method ‘displaynumbers’, which takes in the event and we have consoled the same in the browser as shown above.
-
-We will now check one more event mouseover mouseout.
-
-Example
+# 1. Example of User Events #
 ```js
-<html>
-   <head>
-      <title>VueJs Instance</title>
-      <script type = "text/javascript" src = "js/vue.js"></script>
-   </head>
-   <body>
-      <div id = "databinding">
-         <div v-bind:style = "styleobj" v-on:mouseover = "changebgcolor" v-on:mouseout = "originalcolor"></div>
-      </div>
-      <script type = "text/javascript">
-         var vm = new Vue({
-            el: '#databinding',
-            data: {
-               num1: 100,
-               num2 : 200,
-               total : '',
-               styleobj : {
-                  width:"100px",
-                  height:"100px",
-                  backgroundColor:"red"
-               }
+<template>
+    <div>
+        <h3>Add Hero </h3>
+
+        <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        <input type="button" value="Submit" v-on:click="submitForm"> &nbsp; &nbsp;
+         <input type="button" value="Clear" @click="clearForm">
+        </form>
+
+    </div>
+</template>
+
+<script>
+    export default {
+        name:'HeroAdd',
+        methods: {
+            submitForm() {
+                alert('hello submit form button is clicked');
             },
-            methods : {
-               changebgcolor : function() {
-                  this.styleobj.backgroundColor = "green";
-               },
-               originalcolor : function() {
-                  this.styleobj.backgroundColor = "red";
-               }
+            clearForm(){
+                alert('hello clear button is clicked');
+            }
+        },
+    }
+</script>
+
+<style lang="scss" scoped>
+
+</style>
+```
+
+# 2. Example of attaching value to data variable #
+```js
+<template>
+    <div>
+        <h3>Add Hero </h3>
+
+        <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        <input type="button" value="Submit" v-on:click="submitForm"> &nbsp; &nbsp;
+         <input type="button" value="Clear" @click="clearForm">
+        </form>
+
+        <h1>Event {{message}}</h1>
+    </div>
+</template>
+
+<script>
+    export default {
+        name:'HeroAdd',
+        data() {
+            return {
+                message: ""
+            }
+        },
+        methods: {
+            submitForm() {
+                this.message="Submit Form button is clicked";
             },
-         });
-      </script>
-   </body>
-</html>
-```
-In the above example, we have created a div with width and height as 100px. It has been given a background color red. On mouseover, we are changing the color to green, and on mouseout we are changing the color back to red.
+            clearForm(){
+                this.message="Clear Form button is clicked";
+            }
+        },
+    }
+</script>
 
-Hence, during mouseover, a method is called changebgcolor and once we move the mouse out of the div, a method is called originalcolor.
+<style lang="scss" scoped>
 
-This is done as follows −
-```js
-<div v-bind:style = "styleobj" v-on:mouseover = "changebgcolor" v-on:mouseout = "originalcolor"></div>
+</style>
 ```
 
-Two events - mouseover and mouseout - is assigned to the div as shown above. We have created a styleobj variable and given the required style to be assigned to the div. The same variable is binded to the div using v-bind:style = ”styleobj”
+# 3. Creating method using vmethod #
+<img src="img/img2.png" />
 
-In changebgcolor, we are changing the color to green using the following code.
-```js
-changebgcolor : function() {
-   this.styleobj.backgroundColor = "green";
-}
-```
-Using the stylobj variable, we are changing the color to green.
+<img src="img/img3.png" />
 
-Similarly, the following code is used to change it back to the original color.
-```js
-originalcolor : function() {
-   this.styleobj.backgroundColor = "red";
-}
-```
+## Reference ##
+- https://www.tutorialspoint.com/vuejs/vuejs_events.htm
