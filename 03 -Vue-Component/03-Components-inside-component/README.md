@@ -18,6 +18,8 @@ export default {
 </script>
 ```
 
+- App.vue is using Heros.vue component
+
 ```js
 Header.vue
 <template>
@@ -36,6 +38,7 @@ Header.vue
 
 </style>
 ```
+
 
 ```js
 Header-detail.vue
@@ -102,3 +105,29 @@ import HeroList from './Hero-list.vue'
 
 </style>
 ```
+
+- Heros component is using 1) Header.vue 2)Hero-detail.vue and 3)Hero-list.vue thus they are imported
+- components registered: (Header.vue , Hero-detail.vue and 3) Hero-list)
+
+```js
+export default {
+        name:'Heros',
+        components:{Header,HeroDetail,HeroList}
+    }
+```
+- Then they are used as a normal HTML tag inside template 
+```html
+<template>
+    <div>
+        <Header></Header>
+    </div>
+    <div>
+        <HeroDetail></HeroDetail>
+    </div>
+    <div>
+        <HeroList></HeroList>
+    </div>
+</template>
+```
+
+Note: Template is mandatory inside component in VueJs
