@@ -97,9 +97,17 @@ export default {
   components: { HeaderBarBrand, HeaderBarLinks },
 };
 </script>
+
+<style lang="scss" scoped>
+.foo{
+  color:white:
+}
+</style>
+
 ```
 
 - Inside headerbar we are using header-bar-brand and header-bar-link components.
+- Scoped means this css is scoped for this component only.
 
 ## 5. header-bar-link (src/components/header-bar-link) ##
 ```js
