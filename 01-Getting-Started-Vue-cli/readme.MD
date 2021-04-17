@@ -1,9 +1,21 @@
 ## Getting Started with VueJs ##
 
+## checking nodejs version ##
+```js
+node -v
+```
+
+## Uninstalling VueJS ##
+```js
+npm uninstall -g vue-cli
+```
+
+
 ### 1. Installing VueJs ###
 ```js
 npm install -g @vue/cli
 ```
+
 
 ### 2. Creating VueJs Project using command ###
 ```js
