@@ -5,6 +5,11 @@
 node -v
 ```
 
+## checking vue version ##
+```js
+vue -version
+```
+
 ## Uninstalling VueJS ##
 ```js
 npm uninstall -g @vue/cli
