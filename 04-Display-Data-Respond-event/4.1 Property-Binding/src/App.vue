@@ -1,14 +1,15 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Heros></Heros>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Heros from './components/Heros.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Heros
   }
 }
 </script>
