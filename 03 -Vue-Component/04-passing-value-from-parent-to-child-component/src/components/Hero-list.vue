@@ -1,9 +1,9 @@
 <template>
     <div>
-        <p>Property 1: {{titleChild}}</p>
-        <p>Property 2: </p>
-        <p>Property 3: </p>
-        <p>Property 4: </p>
+        <p>Property 1: {{heroObject.id}}</p>
+        <p>Property 2: {{heroObject.firstName}} </p>
+        <p>Property 3: {{heroObject.lastName}}</p>
+        <p>Property 4: {{heroObject.description}}</p>
     </div>
 </template>
 
@@ -11,7 +11,7 @@
     export default {
         name:'HeroList',
         props: {
-            titleChild: String,
+            heroObject: Object,
         },
     }
 </script>

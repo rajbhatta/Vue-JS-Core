@@ -26,7 +26,7 @@
 <img src="img/img8.png" />
 - default implementation is object
 
-# 1. Passing value from parent component to child component in VueJs - Option 1#
+# 1. Passing value from parent component to child component in VueJs - Option 1 #
 - Within the template  section of the parent component, <b>Heros.vue in our case</b>, call the child component. Prop data is passed as an attribute.
 
 ```js
@@ -89,6 +89,78 @@ props:{
         name:'HeroList',
         props: {
             titleChild: String,
+        },
+    }
+</script>
+
+<style lang="scss" scoped>
+
+</style>
+```
+
+# 2. Passing data from parent to child - option 2 #
+```js
+Parent Component
+
+<template>
+    <div>
+        <Header></Header>
+    </div>
+    <div>
+        <HeroDetail></HeroDetail>
+    </div>
+    <div>
+        <HeroList :heroObject="heros"></HeroList>  // Note that prepending a colon to the prop attribute indicates that a variable is passed, not a string.
+    </div>
+</template>
+
+<script>
+import Header from './Header.vue'
+import HeroDetail from './Hero-detail.vue'
+import HeroList from './Hero-list.vue'
+
+const OUR_HEROES=
+        {
+            id:10,
+            firstName:"AF",
+            lastName: "AL",
+            description:"Test A"
+        };
+
+    export default {
+        name:'Heros',
+        components:{Header,HeroDetail,HeroList},
+        data() {
+            return {
+                heros: OUR_HEROES
+            }
+        },
+    }
+</script>
+
+<style lang="scss" scoped>
+
+</style>
+```
+
+```js
+
+Child component
+
+<template>
+    <div>
+        <p>Property 1: {{heroObject.id}}</p>
+        <p>Property 2: {{heroObject.firstName}} </p>
+        <p>Property 3: {{heroObject.lastName}}</p>
+        <p>Property 4: {{heroObject.description}}</p>
+    </div>
+</template>
+
+<script>
+    export default {
+        name:'HeroList',
+        props: {
+            heroObject: Object,
         },
     }
 </script>
