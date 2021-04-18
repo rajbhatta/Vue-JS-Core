@@ -14,8 +14,6 @@
 
 - Call asyc from created section
 <img src="img/img4.png"/>
-<img src="img/img5.png"/>
-<img src="img/img6.png"/>
 
 ### 1.2 beforeMounted and mounted ###
 - Mounted life cycle hook is used to interact with third party components such component not built for vue such as Jquery UI, Old JavaScript
