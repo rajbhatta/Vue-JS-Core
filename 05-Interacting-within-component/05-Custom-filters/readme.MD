@@ -74,15 +74,16 @@
 </style>
 ```
 
-# 2. Now date formatter #
+# 2. New date formatter #
 <img src="img/img5.png"/>
+
 ```js
 <template>
     <h4>This is hero list</h4>
     
     <div v-for="hero in heros" :key="hero.id">
         {{hero.firstName}}
-        {{hero.originDate / shortDate}}
+        {{hero.originDate | shortDate}}
     </div>
 
 </template>
