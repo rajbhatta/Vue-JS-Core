@@ -11,6 +11,8 @@
 ### 1.2 Goto details page ###
 <img src="img/img1.png" />
 
+- This will generate code as given:
+
 ```js
  <router-link :to="{name: 'name', params:{id: 'value'} }">LinkTitle</router-link>
 ```
