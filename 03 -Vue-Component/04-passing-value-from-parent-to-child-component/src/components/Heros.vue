@@ -6,7 +6,7 @@
         <HeroDetail></HeroDetail>
     </div>
     <div>
-        <HeroList></HeroList>
+        <HeroList titleChild="This title is for child sent from parent"></HeroList>
     </div>
 </template>
 
