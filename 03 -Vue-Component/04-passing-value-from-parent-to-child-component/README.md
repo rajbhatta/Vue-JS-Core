@@ -145,7 +145,7 @@ const OUR_HEROES=
 
 ```js
 
-Child component
+Child Component
 
 <template>
     <div>
