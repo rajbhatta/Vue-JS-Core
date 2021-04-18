@@ -91,3 +91,5 @@ And now we’ll update what we’re using in the template to output from this:
   </li>
 </ul>
 ```
+# Reference #
+- https://css-tricks.com/methods-computed-and-watchers-in-vue-js/#:~:text=Computed%20properties%20are%20a%20vital,used%20well%20and%20extraordinarily%20useful.
